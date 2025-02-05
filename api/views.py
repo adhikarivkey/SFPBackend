@@ -12,6 +12,9 @@ class CostEfficientRoute(APIView):
     def get_serializer(self):
         return CostEfficientRouteSerializer()
 
+    def get(self, request):
+        return Response({"message": "Please provide 'start' and 'end' locations."})
+
     def post(self, request, *args, **kwargs):
         from timeit import default_timer as timer
         start = timer()
