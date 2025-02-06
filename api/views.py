@@ -31,7 +31,6 @@ class CostEfficientRoute(APIView):
         try:
             start_coords = get_geocode(start_location)
             end_coords = get_geocode(end_location)
-            print(start_coords, end_coords)
         except ValueError as e:
             return Response({"error": str(e)}, status=status.HTTP_404_NOT_FOUND)
 
@@ -47,7 +46,7 @@ class CostEfficientRoute(APIView):
         # Step 3: Calculate fuel stops and total cost
         fuel_stops, total_cost = calculate_fuel_stops(route)
         end = timer()
-        print(end - start)
+        print("Seconds", end - start)
 
         # Step 4: Return the response
         return Response({

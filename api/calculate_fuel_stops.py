@@ -68,11 +68,12 @@ def calculate_fuel_stops(route):
 
         fuel_stops.append({
             "name": best_station.name,
-            "mile_marker": round(station_mile, 2),
-            "cost": round(refuel_cost, 2),
-            "lat": best_station.lat,
-            "lng": best_station.lng,
-            "map_url": f"https://www.openstreetmap.org/?mlat={best_station.lat}&mlon={best_station.lng}"
+            "miles_done": round(station_mile, 2),
+            "gas_payment": round(refuel_cost, 2),
+            "gas_price": round(best_station.price, 2),
+            "coordinates": f"{best_station.lat}, {best_station.lng}",
+            "osm_map_url": f"https://www.openstreetmap.org/?mlat={best_station.lat}&mlon={best_station.lng}",
+            "google_map_url": f"https://www.google.com/maps?q={best_station.lat},{best_station.lng}"
         })
 
         total_cost += refuel_cost

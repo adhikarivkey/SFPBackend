@@ -19,5 +19,5 @@ from api.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/cost-efficient_route/', CostEfficientRoute.as_view()),
+    path('api/cost_efficient_route/', CostEfficientRoute.as_view()),
 ]
